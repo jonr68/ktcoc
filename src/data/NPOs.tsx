@@ -1,5 +1,5 @@
 import { NPO } from "./NPO";
-import { Blades } from "./Weapons";
+import { TrooperBlades } from "./Weapons";
 
 export const BrawlerTrooper: NPO = {
   name: "Brawler",
@@ -8,7 +8,7 @@ export const BrawlerTrooper: NPO = {
   move: 6,
   save: 5,
   wounds: 7,
-  weapon: Blades,
+  weapon: TrooperBlades,
 };
 
 // export const BrawlervTough: NPO = {

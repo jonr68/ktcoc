@@ -1,11 +1,11 @@
-import { Weapons } from "./Weapon";
+import { Weapon } from "./Weapon";
 
 export interface NPO {
-    name: string;
-    level: string;
+    name: "Marksman" | "Brawler"
+    level: "Trooper" | "Tough" | "Heavy" | "Warrior";
     apl: number;
     move: number;
     save: number;
     wounds: number;
-    weapon: Weapons
+    weapon: Weapon
   }
