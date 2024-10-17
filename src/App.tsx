@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { BrawlerTrooper } from "./data/NPOs";
+import { MarksmanTrooper } from "./data/NPOs";
 
 // const BrawlerHeavy = BrawlervTrouper
 
@@ -10,25 +10,22 @@ function App() {
     <>
       <div className="App">
         <div>
-          <h1>Name: {BrawlerTrooper.name}</h1>
-          <h3>Size:{BrawlerTrooper.level}</h3>
-          <p>APL: {BrawlerTrooper.apl}</p>
-          <p>Move:{BrawlerTrooper.move}"</p>
-          <p>Save:{BrawlerTrooper.save}+</p>
-          <p>Wounds: {BrawlerTrooper.wounds}</p>
-          <h2>Weapon: {BrawlerTrooper.weapon.name}</h2>
-          <p>ATK: {BrawlerTrooper.weapon.atk}</p>
-          <p>HIT: {BrawlerTrooper.weapon.hit}+</p>
-          <p>WR: {BrawlerTrooper.weapon.wr}</p>
+          <h1>Name: {MarksmanTrooper.name}</h1>
+          <h3>Size:{MarksmanTrooper.level}</h3>
+          <p>APL: {MarksmanTrooper.apl}</p>
+          <p>Move:{MarksmanTrooper.move}"</p>
+          <p>Save:{MarksmanTrooper.save}+</p>
+          <p>Wounds: {MarksmanTrooper.wounds}</p>
+          <h3>Weapons</h3>
+          <ul>
+            {MarksmanTrooper.weapon.map((item, index) => (
+              <li key={index}>
+                {item.name} ATK: {item.atk} HIT: {item.hit} DMG: {item.dmg} WR:{" "}
+                {item.wr}
+              </li>
+            ))}
+          </ul>
         </div>
-        {/* <div>
-      <h1>Name: {BrawlervHeavy.name}</h1>
-      <h2>Size:{BrawlervHeavy.level}</h2>
-      <p>APL: {BrawlervHeavy.apl}</p>
-      <p>Move:{BrawlervHeavy.move}</p>
-      <p>Save:{BrawlervHeavy.save}</p>
-      <p>Wounds: {BrawlervHeavy.wounds}</p>
-      </div> */}
       </div>
     </>
   );

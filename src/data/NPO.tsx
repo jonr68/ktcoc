@@ -7,5 +7,5 @@ export interface NPO {
     move: number;
     save: number;
     wounds: number;
-    weapon: Weapon
+    weapon: Weapon[]
   }
