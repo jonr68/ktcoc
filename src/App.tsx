@@ -3,6 +3,7 @@ import "./App.css";
 import "bulma/css/bulma.css"
 import { MarksmanTrooper } from "./data/NPOs";
 import NPOCard from "./card/NPOCards";
+import Dashboard from "./Pages/Dashboard";
 
 // const BrawlerHeavy = BrawlervTrouper
 
@@ -11,7 +12,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<NPOCard />} />
+          <Route path="/" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </>
