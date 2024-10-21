@@ -18,15 +18,18 @@ const Dashboard = () => {
     MarksmanWarrior,
     MarksmanHeavy,
   ];
-
   return (
     <>
-      <div
-        key={index}
-        className="column is-one-quarter"
-        data-test="Click for Dataslate"
-      >
-        <NPOCard npo={NPOList} />
+      <div className="fixed-grid has-3-cols">
+        <div className="grid">
+          {NPOList?.map((npo, index) => {
+            return (
+              <div key={index} className="cell">
+                <NPOCard npo={npo} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
