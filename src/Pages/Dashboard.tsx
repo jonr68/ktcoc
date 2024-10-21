@@ -10,6 +10,7 @@ import {
   MarksmanWarrior,
   MarksmanHeavy,
 } from "../data/NPOs";
+import { log } from "console";
 
 const Dashboard = () => {
   const NPOList = [
@@ -21,23 +22,24 @@ const Dashboard = () => {
     MarksmanHeavy,
   ];
 
-  const [NPOCrew, setNPOCrew] = useState([])
+  const [NPOCrew, setNPOCrew] = useState<NPO[]>([]);
 
-  const addNPOs = () => {
-    setNPOCrew([...NPOCrew, npo]);
+  const addToNPOCrew = (newNPO: NPO) => {
+    setNPOCrew([...NPOCrew, newNPO]);
+    console.log(NPOCrew);
   };
 
   return (
     <>
-    <div>{NPOCrew}</div>
       <div className="fixed-grid has-3-cols">
         <div className="grid">
           {NPOList?.map((npo, index) => {
             return (
-              <div key={index} className="cell">
-                <NPOCard npo={npo} />
-                <button className="button is-white" onClick={addNPOs}>Add</button>
-              </div>
+              <>
+                <div key={index} className="cell">
+                  <NPOCard npo={npo} />
+                </div>
+              </>
             );
           })}
         </div>
