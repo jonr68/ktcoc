@@ -28,6 +28,10 @@ const Dashboard = () => {
     setNPOCrew([...NPOCrew, newNPO]);
   };
 
+  const removeFromNPOCrew = (indexToRemove: number) => {
+    setNPOCrew(NPOCrew.filter((_, index) => index !== indexToRemove));
+  };
+
   let totalWounds = NPOCrew.reduce((previousValue, currentValue) => {
     return previousValue + currentValue.wounds;
   }, 0);
@@ -53,6 +57,10 @@ const Dashboard = () => {
                 <div key={index} className="cell">
                   <button key={index} onClick={() => addToNPOCrew(npo)}>
                     Add {npo.name} {npo.level} to Crew
+                  </button>
+                  <br/>
+                  <button key={index} onClick={() => removeFromNPOCrew(index)}>
+                    Remove
                   </button>
                   <NPOCard npo={npo} />
                 </div>
