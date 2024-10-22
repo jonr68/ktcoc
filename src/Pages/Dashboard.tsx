@@ -11,6 +11,7 @@ import {
   MarksmanHeavy,
 } from "../data/NPOs";
 import { log } from "console";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const NPOList = [
@@ -30,6 +31,12 @@ const Dashboard = () => {
 
   const removeFromNPOCrew = (indexToRemove: number) => {
     setNPOCrew(NPOCrew.filter((_, index) => index !== indexToRemove));
+  };
+
+  const navigate = useNavigate();
+
+  const Redirect = () => {
+    navigate("/npocrew", (npoCrew = { NPOCrew }));
   };
 
   let totalWounds = NPOCrew.reduce((previousValue, currentValue) => {
@@ -58,11 +65,14 @@ const Dashboard = () => {
                   <button key={index} onClick={() => addToNPOCrew(npo)}>
                     Add {npo.name} {npo.level} to Crew
                   </button>
-                  <br/>
+                  <br />
                   <button key={index} onClick={() => removeFromNPOCrew(index)}>
                     Remove
                   </button>
                   <NPOCard npo={npo} />
+                </div>
+                <div>
+                  <button onClick={Redirect}> Finalize Crew </button>
                 </div>
               </>
             );
