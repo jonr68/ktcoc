@@ -1,22 +1,22 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import "./App.css";
-import "bulma/css/bulma.css"
+import "bulma/css/bulma.css";
 import { MarksmanTrooper } from "./data/NPOs";
 import NPOCard from "./card/NPOCards";
 import Dashboard from "./Pages/Dashboard";
-import NPOCrewList from "./Pages/NPOCrewlist";
+import NPOCrewList from "./Pages/NPOCrewList";
 
 // const BrawlerHeavy = BrawlervTrouper
 
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/npocrew" element={<NPOCrewList />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }

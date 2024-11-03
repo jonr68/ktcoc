@@ -1,15 +1,17 @@
 import NPOCard from "../card/NPOCards";
 import { redirect } from "react-router-dom";
 
-interface NPOCrewListProps {
-    npoCrew: NPO[];
-  }
+// interface NPOCrewListProps {
+//     npoCrew: NPO[];
+//   }
   
 const NPOCrewList = () => {
 
     return(
         <>
-        <div className="fixed-grid has-3-cols">
+
+        crewlist
+        {/* <div className="fixed-grid has-3-cols">
           <div className="grid">
             {NPOList?.map((npo, index) => {
               return (
@@ -19,7 +21,7 @@ const NPOCrewList = () => {
               );
             })}
           </div>
-        </div>
+        </div> */}
       </>
   
     )

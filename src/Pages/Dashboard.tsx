@@ -35,9 +35,9 @@ const Dashboard = () => {
 
   const navigate = useNavigate();
 
-  const Redirect = () => {
-    navigate("/npocrew", (npoCrew = { NPOCrew }));
-  };
+  // const Redirect = () => {
+  //   navigate("/npocrew", (npoCrew = { NPOCrew }));
+  // };
 
   let totalWounds = NPOCrew.reduce((previousValue, currentValue) => {
     return previousValue + currentValue.wounds;
@@ -71,9 +71,9 @@ const Dashboard = () => {
                   </button>
                   <NPOCard npo={npo} />
                 </div>
-                <div>
+                {/* <div>
                   <button onClick={Redirect}> Finalize Crew </button>
-                </div>
+                </div> */}
               </>
             );
           })}
