@@ -8,7 +8,7 @@ interface NPOCardProps {
 const NPOCard = (props: NPOCardProps) => {
   const { name, level, apl, move, save, wounds, weapon } = props.npo;
   return (
-    <div className="column is-one-quarter">
+    <div className="column is-one-half">
       <div className="card has-background-light has-text-black">
         <header className="has-background-navbar-background-color">
           <p className="card-header-title has-text-black">Class: {name}</p>
