@@ -1,4 +1,3 @@
-import { useState } from "react";
 import NPOCard from "../card/NPOCards";
 import { NPO } from "../data/NPO";
 
@@ -13,11 +12,15 @@ import {
 import { log } from "console";
 import { useNavigate } from "react-router-dom";
 
-interface DashboardProps {
-  npoCrew: NPO[];
-}
+// interface DashboardProps {
+//   npoCrew: NPO[];
+// }
 
-const Dashboard = (npoCrew: NPO[], addToNPOCrew: (npo: NPO) => void) => {
+const Dashboard = (props: {
+  npoCrew: NPO[];
+  addToNPOCrew: (arg0: NPO) => void;
+  removeFromNPOCrew: (arg0: number) => void;
+}) => {
   const NPOList = [
     BrawlerTrooper,
     BrawlervTough,
@@ -26,8 +29,6 @@ const Dashboard = (npoCrew: NPO[], addToNPOCrew: (npo: NPO) => void) => {
     MarksmanWarrior,
     MarksmanHeavy,
   ];
-
-  // const [NPOCrew, setNPOCrew] = useState<NPO[]>([]);
 
   const navigate = useNavigate();
 
@@ -44,7 +45,7 @@ const Dashboard = (npoCrew: NPO[], addToNPOCrew: (npo: NPO) => void) => {
       <section>
         <div> Selected NPOs </div>
         <ol>
-          {npoCrew.map((crew: NPO) => (
+          {props.npoCrew.map((crew: NPO) => (
             <li key={crew.name}>
               {crew.name} {crew.level}
             </li>
@@ -58,13 +59,16 @@ const Dashboard = (npoCrew: NPO[], addToNPOCrew: (npo: NPO) => void) => {
             return (
               <>
                 <div key={index} className="cell">
-                  <button key={index} onClick={() => addToNPOCrew(npo)}>
+                  <button key={index} onClick={() => props.addToNPOCrew(npo)}>
                     Add {npo.name} {npo.level} to Crew
                   </button>
                   <br />
-                  {/* <button key={index} onClick={() => removeFromNPOCrew(index)}>
+                  <button
+                    key={index}
+                    onClick={() => props.removeFromNPOCrew(index)}
+                  >
                     Remove
-                  </button> */}
+                  </button>
                   <NPOCard npo={npo} />
                 </div>
                 {/* <div>
