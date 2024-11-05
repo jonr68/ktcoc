@@ -11,8 +11,8 @@ function App() {
 
   const addToNPOCrew = (newNPO: NPO) => {
     setNPOCrew([...NPOCrew, newNPO]);
+    console.log(NPOCrew);
   };
-  console.log(NPOCrew);
 
   const removeFromNPOCrew = (indexToRemove: number) => {
     setNPOCrew(NPOCrew.filter((_, index) => index !== indexToRemove));

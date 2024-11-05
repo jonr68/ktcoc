@@ -12,15 +12,13 @@ import {
 import { log } from "console";
 import { useNavigate } from "react-router-dom";
 
-// interface DashboardProps {
-//   npoCrew: NPO[];
-// }
-
-const Dashboard = (props: {
+interface Props {
   npoCrew: NPO[];
-  addToNPOCrew: (arg0: NPO) => void;
-  removeFromNPOCrew: (arg0: number) => void;
-}) => {
+  addToNPOCrew: (npo: NPO) => void;
+  removeFromNPOCrew: (indeex: number) => void;
+}
+
+const Dashboard = (props: Props) => {
   const NPOList = [
     BrawlerTrooper,
     BrawlervTough,

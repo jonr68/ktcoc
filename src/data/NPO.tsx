@@ -1,3 +1,4 @@
+import { UUID } from "crypto";
 import { Weapon } from "./Weapon";
 
 export interface NPO {
