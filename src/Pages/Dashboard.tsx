@@ -45,10 +45,14 @@ const Dashboard = (props: Props) => {
         <ol>
           {props.npoCrew.map((crew: NPO) => (
             <li key={crew.name}>
-              {crew.name} {crew.level}
+              {crew.name} {crew.level} {crew.id}
+              <button onClick={() => props.removeFromNPOCrew(crew.id)}>
+                Remove
+              </button>
             </li>
           ))}
         </ol>
+
         {/* <div> Total Wounds: {totalWounds}</div> */}
       </section>
       <div className="fixed-grid has-3-cols">
@@ -61,12 +65,6 @@ const Dashboard = (props: Props) => {
                     Add {npo.name} {npo.level} to Crew
                   </button>
                   <br />
-                  <button
-                    key={index}
-                    onClick={() => props.removeFromNPOCrew(npo.id)}
-                  >
-                    Remove
-                  </button>
                   <NPOCard npo={npo} />
                 </div>
                 {/* <div>

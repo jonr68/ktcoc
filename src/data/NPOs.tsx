@@ -13,7 +13,7 @@ import {
 } from "./Weapons";
 
 export const BrawlerTrooper: NPO = {
-  id: crypto.randomUUID(),
+  id:  "0-0-0-0-0",
   name: "Brawler",
   level: "Trooper",
   apl: 2,
@@ -24,7 +24,7 @@ export const BrawlerTrooper: NPO = {
 };
 
 export const BrawlervTough: NPO = {
-  id: crypto.randomUUID(),
+  id:  "0-0-0-0-0",
   name: "Brawler",
   level: "Tough",
   apl: 2,
@@ -35,7 +35,7 @@ export const BrawlervTough: NPO = {
 };
 
 export const BrawlervHeavy: NPO = {
-  id: crypto.randomUUID(),
+  id:  "0-0-0-0-0",
   name: "Brawler",
   level: "Heavy",
   apl: 3,
@@ -46,7 +46,7 @@ export const BrawlervHeavy: NPO = {
 };
 
 export const MarksmanTrooper: NPO = {
-  id: crypto.randomUUID(),
+  id:  "0-0-0-0-0",
   name: "Marksman",
   level: "Trooper",
   apl: 2,
@@ -57,7 +57,7 @@ export const MarksmanTrooper: NPO = {
 };
 
 export const MarksmanWarrior: NPO = {
-  id: crypto.randomUUID(),
+  id:  "0-0-0-0-0",
   name: "Marksman",
   level: "Warrior",
   apl: 2,
@@ -68,7 +68,7 @@ export const MarksmanWarrior: NPO = {
 };
 
 export const MarksmanHeavy: NPO = {
-  id: crypto.randomUUID(),
+  id:  "0-0-0-0-0",
   name: "Marksman",
   level: "Heavy",
   apl: 3,

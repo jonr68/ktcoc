@@ -5,17 +5,22 @@ import Dashboard from "./Pages/Dashboard";
 import NPOCrewList from "./Pages/NPOCrewList";
 import { useState } from "react";
 import { NPO } from "./data/NPO";
+import { log } from "console";
 
 function App() {
   const [NPOCrew, setNPOCrew] = useState<NPO[]>([]);
 
   const addToNPOCrew = (newNPO: NPO) => {
-    setNPOCrew([...NPOCrew, newNPO]);
+    const updatedNPO = { ...newNPO, id: crypto.randomUUID() };
+    setNPOCrew((NPOCrew) => [...NPOCrew, updatedNPO]);
     console.log(NPOCrew);
   };
 
   const removeFromNPOCrew = (idToRemove: string) => {
-    setNPOCrew(NPOCrew.filter((npo, id) => npo.id === idToRemove));
+    console.log(idToRemove);
+    setNPOCrew((NPOCrew) => NPOCrew.filter((npo) => npo.id !== idToRemove));
+
+    console.log(NPOCrew);
   };
 
   return (
