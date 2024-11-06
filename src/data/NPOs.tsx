@@ -1,7 +1,19 @@
 import { NPO } from "./NPO";
-import { HeavyBlades, HeavyFirearm, HeavyKnife, ToughBlades, TrooperBlades, TrooperFirearm, TrooperKnife, TrooperSpecialWeapon, WarriorFirearm, WarriorKnife } from "./Weapons";
+import {
+  HeavyBlades,
+  HeavyFirearm,
+  HeavyKnife,
+  ToughBlades,
+  TrooperBlades,
+  TrooperFirearm,
+  TrooperKnife,
+  TrooperSpecialWeapon,
+  WarriorFirearm,
+  WarriorKnife,
+} from "./Weapons";
 
 export const BrawlerTrooper: NPO = {
+  id: crypto.randomUUID(),
   name: "Brawler",
   level: "Trooper",
   apl: 2,
@@ -12,16 +24,18 @@ export const BrawlerTrooper: NPO = {
 };
 
 export const BrawlervTough: NPO = {
+  id: crypto.randomUUID(),
   name: "Brawler",
   level: "Tough",
   apl: 2,
   move: 5,
   save: 4,
   wounds: 10,
-  weapon: [ToughBlades]
+  weapon: [ToughBlades],
 };
 
 export const BrawlervHeavy: NPO = {
+  id: crypto.randomUUID(),
   name: "Brawler",
   level: "Heavy",
   apl: 3,
@@ -32,6 +46,7 @@ export const BrawlervHeavy: NPO = {
 };
 
 export const MarksmanTrooper: NPO = {
+  id: crypto.randomUUID(),
   name: "Marksman",
   level: "Trooper",
   apl: 2,
@@ -42,21 +57,23 @@ export const MarksmanTrooper: NPO = {
 };
 
 export const MarksmanWarrior: NPO = {
+  id: crypto.randomUUID(),
   name: "Marksman",
   level: "Warrior",
   apl: 2,
   move: 6,
   save: 4,
   wounds: 8,
-  weapon:[WarriorFirearm, WarriorKnife],
+  weapon: [WarriorFirearm, WarriorKnife],
 };
 
 export const MarksmanHeavy: NPO = {
+  id: crypto.randomUUID(),
   name: "Marksman",
   level: "Heavy",
   apl: 3,
   move: 6,
   save: 3,
   wounds: 14,
-  weapon:[HeavyFirearm, HeavyKnife],
+  weapon: [HeavyFirearm, HeavyKnife],
 };

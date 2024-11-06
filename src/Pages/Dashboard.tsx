@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 interface Props {
   npoCrew: NPO[];
   addToNPOCrew: (npo: NPO) => void;
-  removeFromNPOCrew: (indeex: number) => void;
+  removeFromNPOCrew: (indeex: string) => void;
 }
 
 const Dashboard = (props: Props) => {
@@ -63,7 +63,7 @@ const Dashboard = (props: Props) => {
                   <br />
                   <button
                     key={index}
-                    onClick={() => props.removeFromNPOCrew(index)}
+                    onClick={() => props.removeFromNPOCrew(npo.id)}
                   >
                     Remove
                   </button>

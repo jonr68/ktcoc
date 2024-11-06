@@ -14,8 +14,8 @@ function App() {
     console.log(NPOCrew);
   };
 
-  const removeFromNPOCrew = (indexToRemove: number) => {
-    setNPOCrew(NPOCrew.filter((_, index) => index !== indexToRemove));
+  const removeFromNPOCrew = (idToRemove: string) => {
+    setNPOCrew(NPOCrew.filter((npo, id) => npo.id === idToRemove));
   };
 
   return (
