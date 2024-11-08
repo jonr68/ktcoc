@@ -34,9 +34,9 @@ const Dashboard = (props: Props) => {
   //   navigate("/npocrew", (npoCrew = { NPOCrew }));
   // };
 
-  // let totalWounds = NPOCrew.reduce((previousValue, currentValue) => {
-  //   return previousValue + currentValue.wounds;
-  // }, 0);
+  let totalWounds = NPOCrew.reduce((previousValue, currentValue) => {
+    return previousValue + currentValue.wounds;
+  }, 0);
 
   return (
     <>
@@ -45,8 +45,11 @@ const Dashboard = (props: Props) => {
         <ol>
           {props.npoCrew.map((crew: NPO) => (
             <li key={crew.name}>
-              {crew.name} {crew.level} {crew.id}
-              <button onClick={() => props.removeFromNPOCrew(crew.id)}>
+              {crew.name} {crew.level}
+              <button
+                className="button is right"
+                onClick={() => props.removeFromNPOCrew(crew.id)}
+              >
                 Remove
               </button>
             </li>
