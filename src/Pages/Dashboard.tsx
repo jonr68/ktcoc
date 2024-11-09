@@ -10,7 +10,7 @@ import {
   MarksmanHeavy,
 } from "../data/NPOs";
 import { log } from "console";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface Props {
   npoCrew: NPO[];
@@ -58,6 +58,12 @@ const Dashboard = (props: Props) => {
 
         <div> Total Wounds: {totalWounds}</div>
       </section>
+      <div>
+        <Link to="/npocrew">
+          <button>Go to your crew</button>
+        </Link>
+      </div>
+
       <div className="fixed-grid has-3-cols">
         <div className="grid">
           {NPOList?.map((npo, index) => {
@@ -70,9 +76,6 @@ const Dashboard = (props: Props) => {
                   <br />
                   <NPOCard npo={npo} />
                 </div>
-                {/* <div>
-                  <button onClick={Redirect}> Finalize Crew </button>
-                </div> */}
               </>
             );
           })}

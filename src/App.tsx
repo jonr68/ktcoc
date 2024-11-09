@@ -33,7 +33,7 @@ function App() {
               />
             }
           />
-          <Route path="/npocrew" element={<NPOCrewList />} />
+          <Route path="/npocrew" element={<NPOCrewList npoCrew={NPOCrew}/>} />
         </Routes>
       </HashRouter>
     </>
