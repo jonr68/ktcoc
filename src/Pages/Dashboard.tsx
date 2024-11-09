@@ -34,7 +34,7 @@ const Dashboard = (props: Props) => {
   //   navigate("/npocrew", (npoCrew = { NPOCrew }));
   // };
 
-  let totalWounds = NPOCrew.reduce((previousValue, currentValue) => {
+  let totalWounds = props.npoCrew.reduce((previousValue, currentValue) => {
     return previousValue + currentValue.wounds;
   }, 0);
 
@@ -56,7 +56,7 @@ const Dashboard = (props: Props) => {
           ))}
         </ol>
 
-        {/* <div> Total Wounds: {totalWounds}</div> */}
+        <div> Total Wounds: {totalWounds}</div>
       </section>
       <div className="fixed-grid has-3-cols">
         <div className="grid">

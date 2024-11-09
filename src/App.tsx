@@ -13,14 +13,10 @@ function App() {
   const addToNPOCrew = (newNPO: NPO) => {
     const updatedNPO = { ...newNPO, id: crypto.randomUUID() };
     setNPOCrew((NPOCrew) => [...NPOCrew, updatedNPO]);
-    console.log(NPOCrew);
   };
 
   const removeFromNPOCrew = (idToRemove: string) => {
-    console.log(idToRemove);
     setNPOCrew((NPOCrew) => NPOCrew.filter((npo) => npo.id !== idToRemove));
-
-    console.log(NPOCrew);
   };
 
   return (
