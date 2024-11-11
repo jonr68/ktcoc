@@ -1,20 +1,40 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import "./App.css";
-import "bulma/css/bulma.css"
-import { MarksmanTrooper } from "./data/NPOs";
-import NPOCard from "./card/NPOCards";
+import "bulma/css/bulma.css";
 import Dashboard from "./Pages/Dashboard";
-
-// const BrawlerHeavy = BrawlervTrouper
+import NPOCrewList from "./Pages/NPOCrewList";
+import { useState } from "react";
+import { NPO } from "./data/NPO";
 
 function App() {
+  const [NPOCrew, setNPOCrew] = useState<NPO[]>([]);
+
+  const addToNPOCrew = (newNPO: NPO) => {
+    const updatedNPO = { ...newNPO, id: crypto.randomUUID() };
+    setNPOCrew((NPOCrew) => [...NPOCrew, updatedNPO]);
+  };
+
+  const removeFromNPOCrew = (idToRemove: string) => {
+    setNPOCrew((NPOCrew) => NPOCrew.filter((npo) => npo.id !== idToRemove));
+  };
+
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route
+            path="/"
+            element={
+              <Dashboard
+                npoCrew={NPOCrew}
+                addToNPOCrew={addToNPOCrew}
+                removeFromNPOCrew={removeFromNPOCrew}
+              />
+            }
+          />
+          <Route path="/npocrew" element={<NPOCrewList npoCrew={NPOCrew} />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import NPOCard from "../card/NPOCards";
 import { NPO } from "../data/NPO";
 
@@ -10,9 +9,15 @@ import {
   MarksmanWarrior,
   MarksmanHeavy,
 } from "../data/NPOs";
-import { log } from "console";
+import { Link } from "react-router-dom";
 
-const Dashboard = () => {
+interface Props {
+  npoCrew: NPO[];
+  addToNPOCrew: (npo: NPO) => void;
+  removeFromNPOCrew: (indeex: string) => void;
+}
+
+const Dashboard = (props: Props) => {
   const NPOList = [
     BrawlerTrooper,
     BrawlervTough,
@@ -22,17 +27,7 @@ const Dashboard = () => {
     MarksmanHeavy,
   ];
 
-  const [NPOCrew, setNPOCrew] = useState<NPO[]>([]);
-
-  const addToNPOCrew = (newNPO: NPO) => {
-    setNPOCrew([...NPOCrew, newNPO]);
-  };
-
-  const removeFromNPOCrew = (indexToRemove: number) => {
-    setNPOCrew(NPOCrew.filter((_, index) => index !== indexToRemove));
-  };
-
-  let totalWounds = NPOCrew.reduce((previousValue, currentValue) => {
+  let totalWounds = props.npoCrew.reduce((previousValue, currentValue) => {
     return previousValue + currentValue.wounds;
   }, 0);
 
@@ -41,27 +36,37 @@ const Dashboard = () => {
       <section>
         <div> Selected NPOs </div>
         <ol>
-          {NPOCrew.map((crew) => (
+          {props.npoCrew.map((crew: NPO) => (
             <li key={crew.name}>
               {crew.name} {crew.level}
+              <button
+                className="button is right"
+                onClick={() => props.removeFromNPOCrew(crew.id)}
+              >
+                Remove
+              </button>
             </li>
           ))}
         </ol>
+
         <div> Total Wounds: {totalWounds}</div>
       </section>
+      <div>
+        <Link to="/npocrew">
+          <button>Go to your crew</button>
+        </Link>
+      </div>
+
       <div className="fixed-grid has-3-cols">
         <div className="grid">
           {NPOList?.map((npo, index) => {
             return (
               <>
                 <div key={index} className="cell">
-                  <button key={index} onClick={() => addToNPOCrew(npo)}>
+                  <button key={index} onClick={() => props.addToNPOCrew(npo)}>
                     Add {npo.name} {npo.level} to Crew
                   </button>
-                  <br/>
-                  <button key={index} onClick={() => removeFromNPOCrew(index)}>
-                    Remove
-                  </button>
+                  <br />
                   <NPOCard npo={npo} />
                 </div>
               </>
