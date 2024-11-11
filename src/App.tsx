@@ -5,7 +5,6 @@ import Dashboard from "./Pages/Dashboard";
 import NPOCrewList from "./Pages/NPOCrewList";
 import { useState } from "react";
 import { NPO } from "./data/NPO";
-import { log } from "console";
 
 function App() {
   const [NPOCrew, setNPOCrew] = useState<NPO[]>([]);
@@ -33,7 +32,7 @@ function App() {
               />
             }
           />
-          <Route path="/npocrew" element={<NPOCrewList npoCrew={NPOCrew}/>} />
+          <Route path="/npocrew" element={<NPOCrewList npoCrew={NPOCrew} />} />
         </Routes>
       </HashRouter>
     </>

@@ -9,8 +9,7 @@ import {
   MarksmanWarrior,
   MarksmanHeavy,
 } from "../data/NPOs";
-import { log } from "console";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface Props {
   npoCrew: NPO[];
@@ -27,12 +26,6 @@ const Dashboard = (props: Props) => {
     MarksmanWarrior,
     MarksmanHeavy,
   ];
-
-  const navigate = useNavigate();
-
-  // const Redirect = () => {
-  //   navigate("/npocrew", (npoCrew = { NPOCrew }));
-  // };
 
   let totalWounds = props.npoCrew.reduce((previousValue, currentValue) => {
     return previousValue + currentValue.wounds;
