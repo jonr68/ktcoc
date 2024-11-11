@@ -9,6 +9,10 @@ const NPOCard = (props: NPOCardProps) => {
   const { name, level, apl, move, save, wounds, weapon } = props.npo;
   let woundsRemaining = wounds;
 
+  // const lowerWoundCount = (woundsRemaining) => {
+  //   woundsRemaining - 1;
+  // };
+
   return (
     <div className="column is-one-half              ">
       <div className="card has-background-light has-text-black">
@@ -22,7 +26,10 @@ const NPOCard = (props: NPOCardProps) => {
               <div className="cell">APL: {apl}</div>
               <div className="cell">Move:{move}"</div>
               <div className="cell">Save:{save}+</div>
-              <div className="cell">Wounds Remainig: {woundsRemaining} </div>
+              <div className="cell">
+                Wounds Remainig: <button className="button is-small">-</button>
+                {woundsRemaining} <button className="button is-small">+</button>
+              </div>
               <div className="cell">Wounds: {wounds}</div>
               <br />
             </div>
