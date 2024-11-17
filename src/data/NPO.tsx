@@ -10,5 +10,6 @@ export interface NPO {
   save: number;
   woundsRemaining: number;
   totalWounds: number;
+  injuryThreshold: number;
   weapon: Weapon[];
 }
