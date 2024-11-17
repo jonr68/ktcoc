@@ -6,8 +6,8 @@ interface NPOCardProps {
 }
 
 const NPOCard = (props: NPOCardProps) => {
-  const { name, level, apl, move, save, wounds, weapon } = props.npo;
-  let woundsRemaining = wounds;
+  const { name, level, apl, move, save, woundsRemaining, totalWounds, weapon } =
+    props.npo;
 
   // const lowerWoundCount = (woundsRemaining) => {
   //   woundsRemaining - 1;
@@ -30,7 +30,7 @@ const NPOCard = (props: NPOCardProps) => {
                 Wounds Remainig: <button className="button is-small">-</button>
                 {woundsRemaining} <button className="button is-small">+</button>
               </div>
-              <div className="cell">Wounds: {wounds}</div>
+              <div className="cell">Wounds: {totalWounds}</div>
               <br />
             </div>
             <h3>Weapons: </h3>
