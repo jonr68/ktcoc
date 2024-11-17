@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { NPO } from "../data/NPO";
 import { BrawlervHeavy } from "../data/NPOs";
 
@@ -9,9 +10,15 @@ const NPOCard = (props: NPOCardProps) => {
   const { name, level, apl, move, save, woundsRemaining, totalWounds, weapon } =
     props.npo;
 
-  // const lowerWoundCount = (woundsRemaining) => {
-  //   woundsRemaining - 1;
-  // };
+  const [newWoundsRemaining, setNewWoundsRemaining] = useState(woundsRemaining);
+
+  const lowerWoundCount = () => {
+    setNewWoundsRemaining(newWoundsRemaining - 1);
+  };
+
+  const raiseWoundCount = () => {
+    setNewWoundsRemaining(newWoundsRemaining + 1);
+  };
 
   return (
     <div className="column is-one-half              ">
@@ -27,12 +34,16 @@ const NPOCard = (props: NPOCardProps) => {
               <div className="cell">Move:{move}"</div>
               <div className="cell">Save:{save}+</div>
               <div className="cell">
-                Wounds Remainig: <button className="button is-small">-</button>
-                {woundsRemaining} <button className="button is-small">+</button>
+                <button className="button is-small" onClick={lowerWoundCount}>
+                  -
+                </button>
+                <button className="button is-small" onClick={raiseWoundCount}>
+                  +
+                </button>{" "}
+                Wounds: {newWoundsRemaining} / {totalWounds}
               </div>
-              <div className="cell">Wounds: {totalWounds}</div>
-              <br />
             </div>
+            <br />
             <h3>Weapons: </h3>
             <div className="flex-grid">
               <div className="grid">
