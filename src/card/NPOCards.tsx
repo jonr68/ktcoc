@@ -4,6 +4,7 @@ import { BrawlervHeavy } from "../data/NPOs";
 
 interface NPOCardProps {
   npo: NPO;
+  displayPlusMinus: boolean;
 }
 
 const NPOCard = (props: NPOCardProps) => {
@@ -56,15 +57,17 @@ const NPOCard = (props: NPOCardProps) => {
                 </div>
               )}
               <div className="cell">Save:{save}+</div>
-              <div className="cell">
-                <button className="button is-small" onClick={lowerWoundCount}>
-                  -
-                </button>
-                <button className="button is-small" onClick={raiseWoundCount}>
-                  +
-                </button>{" "}
-                Wounds: {newWoundsRemaining} / {totalWounds}
-              </div>
+              {props.displayPlusMinus && (
+                <div className="cell">
+                  <button className="button is-small" onClick={lowerWoundCount}>
+                    -
+                  </button>
+                  <button className="button is-small" onClick={raiseWoundCount}>
+                    +
+                  </button>{" "}
+                  Wounds: {newWoundsRemaining} / {totalWounds}
+                </div>
+              )}
             </div>
             <br />
             <h3>Weapons: </h3>

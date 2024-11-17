@@ -4,6 +4,7 @@ import { NPO } from "../data/NPO";
 
 interface Props {
   npoCrew: NPO[];
+  displayPlusMinus:boolean
 }
 const NPOCrewList = (props: Props) => {
   return (
@@ -22,7 +23,7 @@ const NPOCrewList = (props: Props) => {
               <>
                 <div key={index} className="cell">
                   <br />
-                  <NPOCard npo={npo} />
+                  <NPOCard npo={npo} displayPlusMinus={true} />
                 </div>
               </>
             );

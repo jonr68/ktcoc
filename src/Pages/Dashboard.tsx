@@ -62,7 +62,7 @@ const Dashboard = (props: Props) => {
                     Add {npo.name} {npo.level} to Crew
                   </button>
                   <br />
-                  <NPOCard npo={npo} />
+                  <NPOCard npo={npo} displayPlusMinus={false} />
                 </div>
               </>
             );
