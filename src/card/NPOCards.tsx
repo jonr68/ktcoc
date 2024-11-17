@@ -17,7 +17,8 @@ const NPOCard = (props: NPOCardProps) => {
   };
 
   const raiseWoundCount = () => {
-    setNewWoundsRemaining(newWoundsRemaining + 1);
+    if (newWoundsRemaining < totalWounds)
+      setNewWoundsRemaining(newWoundsRemaining + 1);
   };
 
   return (
