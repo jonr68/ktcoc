@@ -27,10 +27,6 @@ const Dashboard = (props: Props) => {
     MarksmanHeavy,
   ];
 
-  let totalWounds = props.npoCrew.reduce((previousValue, currentValue) => {
-    return previousValue + currentValue.wounds;
-  }, 0);
-
   return (
     <>
       <section>
@@ -49,7 +45,6 @@ const Dashboard = (props: Props) => {
           ))}
         </ol>
 
-        <div> Total Wounds: {totalWounds}</div>
       </section>
       <div>
         <Link to="/npocrew">
